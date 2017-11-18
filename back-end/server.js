@@ -26,8 +26,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require('./models/index');
 
 // Setup Routes
-const MovieRouter = require('./routes/movie-router');
-app.use('/movie', MovieRouter);
+const QuizGameRouter = require('./routes/quizgame-router');
+app.use('/quizgame', QuizGameRouter);
 
 // Homepage message
 app.get('/', (req, res) => {
@@ -36,5 +36,5 @@ app.get('/', (req, res) => {
 
 app.listen(3001, (err) => {
   if (err) { console.log(err); }
-  else { console.log('\nMovie server is running at http://localhost:3001'); }
+  else { console.log('\nquiz-game server is running at http://localhost:3001'); }
 });
