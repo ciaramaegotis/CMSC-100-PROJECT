@@ -227,8 +227,8 @@ db.Question.insertMany([
     question: "What do you call a phobia for advanced technology, or complex devices, especially computers?",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Technophobia",
-    answer: 100,
+    category: "Computer",
+    answer: "Technophobia",
     choices: []
   },
   {
@@ -240,170 +240,170 @@ db.Question.insertMany([
     choices: []
   },
   {
-    question: "What is the chemical formula for water?",
+    question: "What is the female name of horse?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Science",
-    answer: "H2O",
-    choices: ["H20", "wTr", "HIJKLMNO (H to O)", "H-O"]
+    category: "Nature",
+    answer: "Mare",
+    choices: ["Sow", "Mare", "Nannie", "Doe"]
   },
   {
-    question: "What is NOT found in sharks?",
+    question: "Which sign of the zodiac is represented by a lion?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Science",
-    answer: "Bones",
-    choices: ["Gills", "Teeth", "Blood", "Bones"]
+    category: "Nature",
+    answer: "Leo",
+    choices: ["Leo", "Taurus", "Virgo", "Cancer"]
   },
     {
-    question: "What shape is the galaxy we live in, the Milky Way?",
+    question: "What is the familiar name of a young kangaroo?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Science",
-    answer: "Flat Spiral",
-    choices: ["Ball", "Flat Spiral", "Pretzel", "Shape of You"]
+    category: "Nature",
+    answer: "Joey",
+    choices: ["Foal", "Leveret", "Joey", "Kitten"]
   },
     {
-    question: "Which of the following travels the fastest?",
+    question: "Which bird's pink plumage is derived from pigments in its food?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Science",
-    answer: "Light",
-    choices: ["Me, when I'm late", "Cheetah", "Light", "Space Shuttle"]
+    category: "Nature",
+    answer: "Flamingo",
+    choices: ["Pelican", "Bullfinch", "Macaw", "Flamingo"]
   },
   {
-    question: "What is the name of the gas in the air that keeps us alive?",
+    question: "What is the only continent that has no bees?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Science",
-    answer: "Oxygen",
-    choices: ["Rugby", "Oxygen", "Carbon Dioxede", "Nitrogen"]
+    category: "Nature",
+    answer: "Antartica",
+    choices: ["Africa", "Antartica", "Australia", "Asia"]
   },
   {
-    question: "Eucalyptus comprises 99 percent of a fiant panda's die?",
+    question: "You will most likely mind a Giant Panda in China?",
     type: "True or False",
     difficulty: "Medium",
-    category: "Science",
-    answer: "False",
-    choices: ["True", "False"]
-  },
-  {
-    question: "Diffraction refers to the change of the direction of the light after leaving a lens.",
-    type: "True or False",
-    difficulty: "Medium",
-    category: "Science",
-    answer: "False",
-    choices: ["True", "False"]
-  },
-  {
-    question: "Density can be computed using mass divided by volume.",
-    type: "True or False",
-    difficulty: "Medium",
-    category: "Science",
+    category: "Nature",
     answer: "True",
     choices: ["True", "False"]
   },
   {
-    question: "Iodine is used to test if glucose is present in potatoes.",
+    question: "Crickets are known for their uniqie mating call.",
     type: "True or False",
     difficulty: "Medium",
-    category: "Science",
-    answer: "False",
-    choices: ["True", "False"]
-  },
-  {
-    question: "It takes 20 minutes for the caffeine if coffees to fully kick in.",
-    type: "True or False",
-    difficulty: "Medium",
-    category: "Science",
+    category: "Nature",
     answer: "True",
     choices: ["True", "False"]
   },
   {
-    question: "The three most common elements in the universe are hydrogen, oxygen, and ...",
+    question: "Cheetah is considered as the national animal of New Zealand",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Nature",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Katrina is the hurricane that hit New Orleans, killing thousands of people in 2005",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Nature",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Bengal cats are born without tail.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Nature",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "What name is given to the elephants' second upper incisors?",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Science",
-    answer: "Helium",
+    category: "Nature",
+    answer: "Tusks",
     choices: []
   },
   {
-    question: "What is the most abundant metal in the Earth's crsust?",
+    question: "Which black-and-white bird has a reputation as a thief?",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Science",
-    answer: "Aluminum",
+    category: "Nature",
+    answer: "Magpie",
     choices: []
   },
   {
-    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    question: "What animal has a breed named Aberdeen Angus",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Science",
-    answer: "Diamond",
+    category: "Nature",
+    answer: "Cow",
     choices: []
   },
   {
-    question: "How many lightning bolts strike Earth every second?",
+    question: "How many kittens did the world's largest litter coming from a cat owned by V. Gane of Kingham, Oxfordshire, UK?",
     type: "Number Answer",
     difficulty: "Hard",
-    category: "Science",
-    answer: 100,
+    category: "Nature",
+    answer: 19,
     choices: []
   },
   {
-    question: "An electric eel can produce to up to what number of volts?",
+    question: "How many nipples does small to medium-size dogs have?",
     type: "Number Answer",
     difficulty: "Hard",
-    category: "Science",
-    answer: 650,
+    category: "Nature",
+    answer: 8,
     choices: []
   },
   {
-    question: "What is the animal that can be found on firefox logo?",
+    question: "At what age did Michael Jackson start performing onstage with his siblings as the Jackson 5?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Computer",
-    answer: "Red Panda",
-    choices: ["Fox", "Red Panda", "Coyote", "Arctic Wolf"]
+    category: "Music",
+    answer: "Five years old",
+    choices: ["Five years old", "Seventeen years old", "Three years old", "Eight years old"]
   },
   {
-    question: "What was the original name of Google?",
+    question: "Which band release the song, 'Hey There Delilah'?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Computer",
-    answer: "BackRub",
-    choices: ["DuckDuckGo", "Baidu", "Aol", "BackRub"]
+    category: "Music",
+    answer: "Plain White T's",
+    choices: ["The Beatles", "Abba", "Plain White T's", "Backstreet Boys"]
   },
     {
-    question: "In 2011, what word does 1/3 of the divorce filings in US contain?",
+    question: "In 2012, Psy got the record for most YouTube views ever, passing what artist who previously held the record?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Computer",
-    answer: "Facebook",
-    choices: ["Facebook", "Grindr", "Messenger", "Netflix"]
+    category: "Music",
+    answer: "Justin Bieber",
+    choices: ["2NE1", "Justin Bieber", "Pabebe Girls", "Britney Spears"]
   },
     {
-    question: "What was the first thing ever bought and sold over the internet?",
+    question: "Where is Kanye West from?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Computer",
-    answer: "Bag of marijuana",
-    choices: ["Porn tapes", "Bag of marijuana", "Firearms for armies", "Second-hand CPU"]
+    category: "Music",
+    answer: "Chicago, Illinois",
+    choices: ["Chicago, Illinois", "New York City, New York", "Utah", "Texas"]
   },
   {
-    question: "What is the second most search topic on the internet in 1999?",
+    question: "What is The Beatle's number one hit?",
     type: "Multiple Choice",
     difficulty: "Easy",
-    category: "Computer",
+    category: "Music",
     answer: "Pokemon",
-    choices: ["Pornography", "Pokemon", "Illegal drugs", "News"]
+    choices: ["Eleanor Rigby", "Don't Let Me Down", "From Me to You", "Hey Jude"]
   },
   {
     question: "The first webcam was used in 1991 by Cambrdige researchers for checking the coffee pot without leaving their desks.",
     type: "True or False",
     difficulty: "Medium",
-    category: "Computer",
+    category: "Music",
     answer: "True",
     choices: ["True", "False"]
   },
@@ -411,7 +411,7 @@ db.Question.insertMany([
     question: "About 50% of the people try to plug their USB devices upside down",
     type: "True or False",
     difficulty: "Medium",
-    category: "Computer",
+    category: "Music",
     answer: "False",
     choices: ["True", "False"]
   },
@@ -419,7 +419,7 @@ db.Question.insertMany([
     question: "Wifi can cause cancer.",
     type: "True or False",
     difficulty: "Medium",
-    category: "Computer",
+    category: "Music",
     answer: "False",
     choices: ["True", "False"]
   },
@@ -427,7 +427,7 @@ db.Question.insertMany([
     question: "Changing fonts can save printer ink.",
     type: "True or False",
     difficulty: "Medium",
-    category: "Computer",
+    category: "Music",
     answer: "True",
     choices: ["True", "False"]
   },
@@ -435,23 +435,23 @@ db.Question.insertMany([
     question: "Email existed before the world wide web.",
     type: "True or False",
     difficulty: "Medium",
-    category: "Computer",
+    category: "Music",
     answer: "True",
     choices: ["True", "False"]
   },
   {
-    question: "At least how many dollars do facebook pay if you can find a way to hack the site?",
+    question: "How many kids does Snoop Dogg have?",
     type: "Number Answer",
     difficulty: "Hard",
-    category: "Computer",
-    answer: 500,
+    category: "Music",
+    answer: 3,
     choices: []
   },
   {
     question: "How many work days (8 hours) would it take for an average person to read the terms and conditions they agree to in a year?",
     type: "Number Answer",
     difficulty: "Hard",
-    category: "Computer",
+    category: "Music",
     answer: 76,
     choices: []
   },
@@ -459,7 +459,7 @@ db.Question.insertMany([
     question: "What is the name of the first AI robot to be given a citizenship? (Clue: the robot became a Saudi Arabian citizen.)",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Computer",
+    category: "Music",
     answer: "Sophia",
     choices: []
   },
@@ -467,7 +467,7 @@ db.Question.insertMany([
     question: "What do you call a phobia for advanced technology, or complex devices, especially computers?",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Technophobia",
+    category: "Music",
     answer: 100,
     choices: []
   },
@@ -475,7 +475,7 @@ db.Question.insertMany([
     question: "A set of flip flops integrated together is called?",
     type: "Text Answer",
     difficulty: "Hard",
-    category: "Computer",
+    category: "Music",
     answer: "Register",
     choices: []
   },
