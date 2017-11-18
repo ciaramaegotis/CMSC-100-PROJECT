@@ -104,19 +104,379 @@ db.Question.insertMany([
     choices: []
   },
   {
-    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    question: "How many lightning bolts strike Earth every second?",
     type: "Number Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: 100,
+    choices: []
+  },
+  {
+    question: "An electric eel can produce to up to what number of volts?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: 650,
+    choices: []
+  },
+  {
+    question: "What is the animal that can be found on firefox logo?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Red Panda",
+    choices: ["Fox", "Red Panda", "Coyote", "Arctic Wolf"]
+  },
+  {
+    question: "What was the original name of Google?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "BackRub",
+    choices: ["DuckDuckGo", "Baidu", "Aol", "BackRub"]
+  },
+    {
+    question: "In 2011, what word does 1/3 of the divorce filings in US contain?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Facebook",
+    choices: ["Facebook", "Grindr", "Messenger", "Netflix"]
+  },
+    {
+    question: "What was the first thing ever bought and sold over the internet?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Bag of marijuana",
+    choices: ["Porn tapes", "Bag of marijuana", "Firearms for armies", "Second-hand CPU"]
+  },
+  {
+    question: "What is the second most search topic on the internet in 1999?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Pokemon",
+    choices: ["Pornography", "Pokemon", "Illegal drugs", "News"]
+  },
+  {
+    question: "The first webcam was used in 1991 by Cambrdige researchers for checking the coffee pot without leaving their desks.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "About 50% of the people try to plug their USB devices upside down",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Wifi can cause cancer.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Changing fonts can save printer ink.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Email existed before the world wide web.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "At least how many dollars do facebook pay if you can find a way to hack the site?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: 500,
+    choices: []
+  },
+  {
+    question: "How many work days (8 hours) would it take for an average person to read the terms and conditions they agree to in a year?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: 76,
+    choices: []
+  },
+  {
+    question: "What is the name of the first AI robot to be given a citizenship? (Clue: the robot became a Saudi Arabian citizen.)",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: "Sophia",
+    choices: []
+  },
+  {
+    question: "What do you call a phobia for advanced technology, or complex devices, especially computers?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Technophobia",
+    answer: 100,
+    choices: []
+  },
+  {
+    question: "A set of flip flops integrated together is called?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: "Register",
+    choices: []
+  },
+  {
+    question: "What is the chemical formula for water?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "H2O",
+    choices: ["H20", "wTr", "HIJKLMNO (H to O)", "H-O"]
+  },
+  {
+    question: "What is NOT found in sharks?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Bones",
+    choices: ["Gills", "Teeth", "Blood", "Bones"]
+  },
+    {
+    question: "What shape is the galaxy we live in, the Milky Way?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Flat Spiral",
+    choices: ["Ball", "Flat Spiral", "Pretzel", "Shape of You"]
+  },
+    {
+    question: "Which of the following travels the fastest?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Light",
+    choices: ["Me, when I'm late", "Cheetah", "Light", "Space Shuttle"]
+  },
+  {
+    question: "What is the name of the gas in the air that keeps us alive?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Oxygen",
+    choices: ["Rugby", "Oxygen", "Carbon Dioxede", "Nitrogen"]
+  },
+  {
+    question: "Eucalyptus comprises 99 percent of a fiant panda's die?",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Diffraction refers to the change of the direction of the light after leaving a lens.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Density can be computed using mass divided by volume.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Iodine is used to test if glucose is present in potatoes.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "It takes 20 minutes for the caffeine if coffees to fully kick in.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "The three most common elements in the universe are hydrogen, oxygen, and ...",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Helium",
+    choices: []
+  },
+  {
+    question: "What is the most abundant metal in the Earth's crsust?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Aluminum",
+    choices: []
+  },
+  {
+    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    type: "Text Answer",
     difficulty: "Hard",
     category: "Science",
     answer: "Diamond",
     choices: []
   },
   {
-    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    question: "How many lightning bolts strike Earth every second?",
     type: "Number Answer",
     difficulty: "Hard",
     category: "Science",
-    answer: "Diamond",
+    answer: 100,
     choices: []
   },
-])
+  {
+    question: "An electric eel can produce to up to what number of volts?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: 650,
+    choices: []
+  },
+  {
+    question: "What is the animal that can be found on firefox logo?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Red Panda",
+    choices: ["Fox", "Red Panda", "Coyote", "Arctic Wolf"]
+  },
+  {
+    question: "What was the original name of Google?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "BackRub",
+    choices: ["DuckDuckGo", "Baidu", "Aol", "BackRub"]
+  },
+    {
+    question: "In 2011, what word does 1/3 of the divorce filings in US contain?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Facebook",
+    choices: ["Facebook", "Grindr", "Messenger", "Netflix"]
+  },
+    {
+    question: "What was the first thing ever bought and sold over the internet?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Bag of marijuana",
+    choices: ["Porn tapes", "Bag of marijuana", "Firearms for armies", "Second-hand CPU"]
+  },
+  {
+    question: "What is the second most search topic on the internet in 1999?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Computer",
+    answer: "Pokemon",
+    choices: ["Pornography", "Pokemon", "Illegal drugs", "News"]
+  },
+  {
+    question: "The first webcam was used in 1991 by Cambrdige researchers for checking the coffee pot without leaving their desks.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "About 50% of the people try to plug their USB devices upside down",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Wifi can cause cancer.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Changing fonts can save printer ink.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Email existed before the world wide web.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Computer",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "At least how many dollars do facebook pay if you can find a way to hack the site?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: 500,
+    choices: []
+  },
+  {
+    question: "How many work days (8 hours) would it take for an average person to read the terms and conditions they agree to in a year?",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: 76,
+    choices: []
+  },
+  {
+    question: "What is the name of the first AI robot to be given a citizenship? (Clue: the robot became a Saudi Arabian citizen.)",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: "Sophia",
+    choices: []
+  },
+  {
+    question: "What do you call a phobia for advanced technology, or complex devices, especially computers?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Technophobia",
+    answer: 100,
+    choices: []
+  },
+  {
+    question: "A set of flip flops integrated together is called?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Computer",
+    answer: "Register",
+    choices: []
+  },
+]);
