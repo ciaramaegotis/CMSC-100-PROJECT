@@ -1,0 +1,122 @@
+db.Question.insertMany([
+  {
+    question: "What is the chemical formula for water?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "H2O",
+    choices: ["H20", "wTr", "HIJKLMNO (H to O)", "H-O"]
+  },
+  {
+    question: "What is NOT found in sharks?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Bones",
+    choices: ["Gills", "Teeth", "Blood", "Bones"]
+  },
+    {
+    question: "What shape is the galaxy we live in, the Milky Way?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Flat Spiral",
+    choices: ["Ball", "Flat Spiral", "Pretzel", "Shape of You"]
+  },
+    {
+    question: "Which of the following travels the fastest?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Light",
+    choices: ["Me, when I'm late", "Cheetah", "Light", "Space Shuttle"]
+  },
+  {
+    question: "What is the name of the gas in the air that keeps us alive?",
+    type: "Multiple Choice",
+    difficulty: "Easy",
+    category: "Science",
+    answer: "Oxygen",
+    choices: ["Rugby", "Oxygen", "Carbon Dioxede", "Nitrogen"]
+  },
+  {
+    question: "Eucalyptus comprises 99 percent of a fiant panda's die?",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Diffraction refers to the change of the direction of the light after leaving a lens.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Density can be computed using mass divided by volume.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "Iodine is used to test if glucose is present in potatoes.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "False",
+    choices: ["True", "False"]
+  },
+  {
+    question: "It takes 20 minutes for the caffeine if coffees to fully kick in.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Science",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "The three most common elements in the universe are hydrogen, oxygen, and ...",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Helium",
+    choices: []
+  },
+  {
+    question: "What is the most abundant metal in the Earth's crsust?",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Aluminum",
+    choices: []
+  },
+  {
+    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    type: "Text Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Diamond",
+    choices: []
+  },
+  {
+    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Diamond",
+    choices: []
+  },
+  {
+    question: "This kind of mineral is the hardest naturally occuring substance and consists of crystals formed almost entirely of carbon.",
+    type: "Number Answer",
+    difficulty: "Hard",
+    category: "Science",
+    answer: "Diamond",
+    choices: []
+  },
+])

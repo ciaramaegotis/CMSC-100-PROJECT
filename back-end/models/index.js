@@ -1,3 +1,4 @@
 // add all models here
 
-require('./Movie');
+require('./Question');
+require('./HighScore');
