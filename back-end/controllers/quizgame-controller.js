@@ -1,4 +1,4 @@
-const HighScore = require('mongoose').model('HighScore');
+// const HighScore = require('mongoose').model('HighScore');
 const Question = require('mongoose').model('Question');
 // const Movie = require('mongoose').model('Movie');
 
@@ -6,12 +6,13 @@ const Question = require('mongoose').model('Question');
 
 
 exports.findAll = (req, res) => {
-  Movie.find({}, (err, movies) => {
+ Question.find({}, (err, questions) => {
     if (err) {
       console.log(err);
       res.send({});
     } else {
-      res.send(movies);
+      console.log(questions);
+      res.send(questions);
     }
   });
 }
@@ -53,6 +54,7 @@ exports.findAll = (req, res) => {
 // }
 
 exports.getquiz = (req, res) => {
+  console.log("called getquiz");
   //get n random questions from 3 categories
   const categories = [req.params.cat1, req.params.cat2, req.params.cat3];
   const n = parseInt(req.params.n);
@@ -91,4 +93,5 @@ exports.getquiz = (req, res) => {
     // remove the question from fetchedQuestions[i%3]
     fetchedQuestions[i%3].splice(fetchedQuestions[i%3].indexOf(randomQuestion), 1);
   }
+  res.send(questionsToSubmit);
 }

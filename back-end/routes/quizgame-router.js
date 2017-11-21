@@ -27,5 +27,6 @@ const QuizGameController = require('../controllers/quizgame-controller');
 // router.get('/find-by-id/:_id', MovieController.findById);
 // router.post('/add', MovieController.add);
 // router.post('/delete', MovieController.delete);
-router.get('getquiz?category1=:cat1&category2=:cat2&category3=:cat3&count=:n');
+router.get('/getquiz?category1=:cat1&category2=:cat2&category3=:cat3&count=:n', QuizGameController.getquiz);
+router.get('/findAll', QuizGameController.findAll);
 module.exports = router;
