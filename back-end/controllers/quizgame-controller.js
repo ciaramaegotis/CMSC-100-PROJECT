@@ -3,16 +3,18 @@ const Question = require('mongoose').model('Question');
 // const Movie = require('mongoose').model('Movie');
 
 
-// exports.findAll = (req, res) => {
-//   Movie.find({}, (err, movies) => {
-//     if (err) {
-//       console.log(err);
-//       res.send({});
-//     } else {
-//       res.send(movies);
-//     }
-//   });
-// }
+
+
+exports.findAll = (req, res) => {
+  Movie.find({}, (err, movies) => {
+    if (err) {
+      console.log(err);
+      res.send({});
+    } else {
+      res.send(movies);
+    }
+  });
+}
 //
 // exports.findById = (req, res) => {
 //   const _id = req.params._id;
@@ -47,5 +49,46 @@ const Question = require('mongoose').model('Question');
 //     } else {
 //       res.send(true);
 //     }
-//   });
+//   });did
 // }
+
+exports.getquiz = (req, res) => {
+  //get n random questions from 3 categories
+  const categories = [req.params.cat1, req.params.cat2, req.params.cat3];
+  const n = parseInt(req.params.n);
+  //findAll movies with categories
+  let  fetchedQuestions = new Array();
+
+  for(let i = 0; i < 3; i++){
+    // get all questions with current category
+    Question.findAll({category: categories[i]}, (err, questions) =>
+      {
+        if(err){
+          // if error, send empty object
+          console.error();
+          res.send({});
+        }else{
+          fetchedQuestions[i] = questions;
+        }
+
+      }
+    );
+  }
+    // get n/3 hard random questions
+  let questionsToSubmit = new Array();
+  const difficulty = ['easy', 'medium', 'hard'];
+  for(let i=0; i < n; i++){
+    // get the a random questions from the current list of questions with the current category
+    let category = difficulty[i%3];
+    let questionSet = new Array();
+
+    for(let j = 0; j < fetchedQuestions[i%3].length; j++){
+      if(fetchedQuestions[i%3][j].category == category) questionSet.push(fetchedQuestions[i%3][j]);
+    }
+    // get the random question
+    let randomQuestion = questionSet[Math.floor(Math.random() * questionSet.length)];
+    questionsToSubmit.push(randomQuestion);
+    // remove the question from fetchedQuestions[i%3]
+    fetchedQuestions[i%3].splice(fetchedQuestions[i%3].indexOf(randomQuestion), 1);
+  }
+}

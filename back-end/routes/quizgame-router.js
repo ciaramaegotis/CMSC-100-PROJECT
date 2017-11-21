@@ -9,14 +9,17 @@ const QuizGameController = require('../controllers/quizgame-controller');
  */
 
 /*
-* GET /getquestions?category1=?:cat1&category2=:cat2&category3=:cat3&count=:n
+* GET /getquiz?category1=:cat1&category2=:cat2&category3=:cat3&count=:n
 * POST /submitscore
 * GET /gethighscores
 * GET /get-all-categories
 * GET /questions-from-category/:category //for getting questions from a category
 * POST /add-category
 * POST /delete-category
-* GET 
+* POST /edit-category
+* GET /view-question/:id
+* POST /edit-question
+* POST /delete-question
 */
 
 //
@@ -24,4 +27,5 @@ const QuizGameController = require('../controllers/quizgame-controller');
 // router.get('/find-by-id/:_id', MovieController.findById);
 // router.post('/add', MovieController.add);
 // router.post('/delete', MovieController.delete);
+router.get('getquiz?category1=:cat1&category2=:cat2&category3=:cat3&count=:n');
 module.exports = router;
