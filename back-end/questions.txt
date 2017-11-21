@@ -396,11 +396,11 @@ db.Question.insertMany([
     type: "Multiple Choice",
     difficulty: "Easy",
     category: "Music",
-    answer: "Pokemon",
+    answer: "From Me to You",
     choices: ["Eleanor Rigby", "Don't Let Me Down", "From Me to You", "Hey Jude"]
   },
   {
-    question: "The first webcam was used in 1991 by Cambrdige researchers for checking the coffee pot without leaving their desks.",
+    question: "The song 'Miss Independent' was Kelly Clarkson's debut song?",
     type: "True or False",
     difficulty: "Medium",
     category: "Music",
@@ -408,7 +408,7 @@ db.Question.insertMany([
     choices: ["True", "False"]
   },
   {
-    question: "About 50% of the people try to plug their USB devices upside down",
+    question: "Playing musci regularly will not physically alter your brain structure.",
     type: "True or False",
     difficulty: "Medium",
     category: "Music",
@@ -416,15 +416,7 @@ db.Question.insertMany([
     choices: ["True", "False"]
   },
   {
-    question: "Wifi can cause cancer.",
-    type: "True or False",
-    difficulty: "Medium",
-    category: "Music",
-    answer: "False",
-    choices: ["True", "False"]
-  },
-  {
-    question: "Changing fonts can save printer ink.",
+    question: "Justine Timberlake's 'Rock Your Body' was written by Pharell Williams.",
     type: "True or False",
     difficulty: "Medium",
     category: "Music",
@@ -432,7 +424,7 @@ db.Question.insertMany([
     choices: ["True", "False"]
   },
   {
-    question: "Email existed before the world wide web.",
+    question: "Sarah McLachan's song entitled 'Angel' is about heroin addiction.",
     type: "True or False",
     difficulty: "Medium",
     category: "Music",
@@ -440,43 +432,51 @@ db.Question.insertMany([
     choices: ["True", "False"]
   },
   {
-    question: "How many kids does Snoop Dogg have?",
+    question: "There is a conspiracy about the pop punk star Avril Lavigne that she had died years ago and her doppleganger continues her legacy.",
+    type: "True or False",
+    difficulty: "Medium",
+    category: "Music",
+    answer: "True",
+    choices: ["True", "False"]
+  },
+  {
+    question: "In how many minutes was the song 'Sweet Child o' Mine' written?",
     type: "Number Answer",
     difficulty: "Hard",
     category: "Music",
-    answer: 3,
+    answer: 5,
     choices: []
   },
   {
-    question: "How many work days (8 hours) would it take for an average person to read the terms and conditions they agree to in a year?",
+    question: "What is the year of birth of Taylor Swift?",
     type: "Number Answer",
     difficulty: "Hard",
     category: "Music",
-    answer: 76,
+    answer: 1989,
     choices: []
   },
   {
-    question: "What is the name of the first AI robot to be given a citizenship? (Clue: the robot became a Saudi Arabian citizen.)",
+    question: "From what band is the song 'The Day You Said Goodnight'?",
     type: "Text Answer",
     difficulty: "Hard",
     category: "Music",
-    answer: "Sophia",
+    answer: "Hale",
     choices: []
   },
   {
-    question: "What do you call a phobia for advanced technology, or complex devices, especially computers?",
+    question: "What korean girl group in 2007, that released the song 'Nobody' that reached million hits?",
     type: "Text Answer",
     difficulty: "Hard",
     category: "Music",
-    answer: 100,
+    answer: "Wonder Girls",
     choices: []
   },
   {
-    question: "A set of flip flops integrated together is called?",
+    question: "Who was the ex-member of Fifth Harmony who quitted the group to start her solo career?",
     type: "Text Answer",
     difficulty: "Hard",
     category: "Music",
-    answer: "Register",
+    answer: "Camila Cabello",
     choices: []
   },
 ]);
