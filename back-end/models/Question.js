@@ -8,6 +8,8 @@ const QuestionSchema = new Schema({
   category: { type: String, default: '' },
   answer: { type: String, default: '' },
   choices: {type: Array, default: []}
-});
+},
+{collection: 'Question'}
+);
 
 mongoose.model('Question', QuestionSchema);

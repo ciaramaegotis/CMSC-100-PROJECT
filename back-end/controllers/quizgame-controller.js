@@ -54,28 +54,36 @@ exports.findAll = (req, res) => {
 // }
 
 exports.getquiz = (req, res) => {
-  console.log("called getquiz");
   //get n random questions from 3 categories
   const categories = [req.params.cat1, req.params.cat2, req.params.cat3];
   const n = parseInt(req.params.n);
+  console.log(categories);
+  console.log(n);
   //findAll movies with categories
-  let  fetchedQuestions = new Array();
+  let fetchedQuestions = [[],[],[]];
+  // fetchedQuestions[0] =[];
+  // fetchedQuestions[1] =[];
+  // fetchedQuestions[2] =[];
 
   for(let i = 0; i < 3; i++){
     // get all questions with current category
-    Question.findAll({category: categories[i]}, (err, questions) =>
+    Question.find({'category': categories[i]},'question type difficulty category answer choices' ,(err, questions) =>
       {
         if(err){
           // if error, send empty object
           console.error();
           res.send({});
         }else{
-          fetchedQuestions[i] = questions;
+          fetchedQuestions.push(questions);
+          console.log(questions);
+          console.log(fetchedQuestions[i]);
+
         }
 
       }
     );
   }
+  console.log(fetchedQuestions);
     // get n/3 hard random questions
   let questionsToSubmit = new Array();
   const difficulty = ['easy', 'medium', 'hard'];
