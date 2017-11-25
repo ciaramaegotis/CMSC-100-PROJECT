@@ -408,7 +408,7 @@ db.Question.insertMany([
     choices: ["True", "False"]
   },
   {
-    question: "Playing musci regularly will not physically alter your brain structure.",
+    question: "Playing music regularly will not physically alter your brain structure.",
     type: "True or False",
     difficulty: "Medium",
     category: "Music",
