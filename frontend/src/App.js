@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Play from './Components/Play';
 import Highscore from './Components/Highscore';
 import Edit from './Components/Edit';
-
+import './Components/CSS/Home.css';
 class App extends Component {
   render() {
     return (
