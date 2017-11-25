@@ -57,14 +57,15 @@ exports.getquiz = (req, res) => {
   //get n random questions from 3 categories
   const categories = [req.params.cat1, req.params.cat2, req.params.cat3];
   const n = parseInt(req.params.n);
-  console.log(categories);
-  console.log(n);
   //findAll movies with categories
-  let fetchedQuestions = [[],[],[]];
-  // fetchedQuestions[0] =[];
-  // fetchedQuestions[1] =[];
-  // fetchedQuestions[2] =[];
+  fetchedQuestions = getquestions(categories, randomizeQuestions);
 
+  console.log(fetchedQuestions);
+  res.send(questionsToSubmit);
+}
+
+var getquestions = (categories,n,callback) =>{
+  let fetchedQuestions = [[],[],[]];
   for(let i = 0; i < 3; i++){
     // get all questions with current category
     Question.find({'category': categories[i]},'question type difficulty category answer choices' ,(err, questions) =>
@@ -72,34 +73,36 @@ exports.getquiz = (req, res) => {
         if(err){
           // if error, send empty object
           console.error();
-          res.send({});
+          return fetchedQuestions;
         }else{
           fetchedQuestions.push(questions);
-          console.log(questions);
-          console.log(fetchedQuestions[i]);
-
+          // console.log(questions);
+          // console.log(fetchedQuestions[i]);
         }
 
       }
     );
   }
-  console.log(fetchedQuestions);
-    // get n/3 hard random questions
-  let questionsToSubmit = new Array();
-  const difficulty = ['easy', 'medium', 'hard'];
-  for(let i=0; i < n; i++){
-    // get the a random questions from the current list of questions with the current category
-    let category = difficulty[i%3];
-    let questionSet = new Array();
+  return callback(fetchedQuestions,n);
+}
 
-    for(let j = 0; j < fetchedQuestions[i%3].length; j++){
-      if(fetchedQuestions[i%3][j].category == category) questionSet.push(fetchedQuestions[i%3][j]);
-    }
-    // get the random question
-    let randomQuestion = questionSet[Math.floor(Math.random() * questionSet.length)];
-    questionsToSubmit.push(randomQuestion);
-    // remove the question from fetchedQuestions[i%3]
-    fetchedQuestions[i%3].splice(fetchedQuestions[i%3].indexOf(randomQuestion), 1);
+var randomizeQuestions = (questions,n) =>{
+  // get n/3 hard random questions
+let questionsToSubmit = new Array();
+const difficulty = ['easy', 'medium', 'hard'];
+for(let i=0; i < n; i++){
+  // get the a random questions from the current list of questions with the current category
+  let category = difficulty[i%3];
+  let questionSet = new Array();
+
+  for(let j = 0; j < questions[i%3].length; j++){
+    if(questions[i%3][j].category == category) questionSet.push(questions[i%3][j]);
   }
-  res.send(questionsToSubmit);
+  // get the random question
+  let randomQuestion = questionSet[Math.floor(Math.random() * questionSet.length)];
+  questionsToSubmit.push(randomQuestion);
+  // remove the question from questions[i%3]
+  questions[i%3].splice(questions[i%3].indexOf(randomQuestion), 1);
+}
+return questionsToSubmit;
 }
