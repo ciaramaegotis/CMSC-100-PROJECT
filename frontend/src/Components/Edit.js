@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import AddQuestion from './AddQuestion';
+
 import Button from './Button';
 import './../App.css';
 class Edit extends Component {

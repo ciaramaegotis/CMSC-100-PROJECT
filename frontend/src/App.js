@@ -7,7 +7,8 @@ import AddQuestion from './Components/AddQuestion';
 import Highscore from './Components/Highscore';
 import Edit from './Components/Edit';
 import ViewQuestions from './Components/ViewQuestions';
-import './Components/CSS/Home.css';
+import Game from './Components/Game';
+// import './Components/CSS/Home.css';
 class App extends Component {
   render() {
     return (
@@ -18,6 +19,8 @@ class App extends Component {
         <Route exact={true} path="/play" component={Play} />
         <Route exact={true} path="/highscore" component={Highscore} />
         <Route exact={true} path="/edit" component={Edit} />
+        <Route path="/game/:cat1&:cat2&:cat3&:noq" component={Game} />
+
         <Route exact={true} path="/edit/add-question" component={AddQuestion}/>
         <Route exact={true} path="/edit/add-category" component={AddCategory}/>
         <Route exact={true} path="/edit/view-questions" component={ViewQuestions}/>
