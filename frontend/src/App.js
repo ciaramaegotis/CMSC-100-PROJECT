@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './Components/Home';
 import Play from './Components/Play';
+import Game from './Components/Game';
 import AddCategory from './Components/AddCategory';
 import AddQuestion from './Components/AddQuestion';
 import Highscore from './Components/Highscore';
 import Edit from './Components/Edit';
 import ViewQuestions from './Components/ViewQuestions';
-import './Components/CSS/Home.css';
 class App extends Component {
   render() {
     return (
@@ -18,9 +18,7 @@ class App extends Component {
         <Route exact={true} path="/play" component={Play} />
         <Route exact={true} path="/highscore" component={Highscore} />
         <Route exact={true} path="/edit" component={Edit} />
-<<<<<<< HEAD
         <Route path="/game/:cat1&:cat2&:cat3&:noq" component={Game} />
-=======
         <Route exact={true} path="/edit/add-question" component={AddQuestion}/>
         <Route exact={true} path="/edit/add-category" component={AddCategory}/>
         <Route exact={true} path="/edit/view-questions" component={ViewQuestions}/>
@@ -29,7 +27,6 @@ class App extends Component {
         <Route exact={true} path="/edit/edit-category" component={Home}/>
         <Route exact={true} path="/edit/delete-question" component={Home}/>
         <Route exact={true} path="/edit/delete-category" component={Home}/>
->>>>>>> d939d3a6ad78ab43013fda7ba2c551257e524fc8
         </div>
       </Router>
       </div>
