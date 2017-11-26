@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
 import './../../semantic/dist/semantic.min.css';
+import './CSS/Home.css';
+
+import $ from 'jquery';
 class Home extends Component {
   render() {
     return (
-      <div className='Home'>
+      <div className='Home' id = "background">
         <header>
-          <h1>General Quiz Game</h1>
+          <h1 id = "titleGame">Kakasa ka ba kay Ma'am Monina?</h1>
         </header>
-        <div className="ui three item menu">
-          <Button className="ui button" value={"Play"} onClick={()=>{window.location="/play"}}/>
-          <Button className="ui button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
-          <Button className="ui button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
+        <div id = "center">
+          <Button id = "menuButton" className="massive ui inverted button" value={"Play"} onClick={()=>{window.location="/play"}}/>
+          <Button id = "menuButton" className="massive ui inverted button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
+          <Button id = "menuButton" className="massive ui inverted button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
         </div>
       </div>
     );
