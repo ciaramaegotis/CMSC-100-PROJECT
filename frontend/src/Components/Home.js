@@ -6,12 +6,12 @@ class Home extends Component {
     return (
       <div className='Home'>
         <header>
-          <h1 id = "titleGame">Kakasa ka ba kay Ma'am Monina?</h1>
+          <h1 id="titleGame">Kakasa ka ba kay Ma'am Monina?</h1>
         </header>
-        <div id = "center">
-          <Button id = "menuButton" className="massive ui inverted button" value={"Play"} onClick={()=>{window.location="/play"}}/>
-          <Button id = "menuButton" className="massive ui inverted button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
-          <Button id = "menuButton" className="massive ui inverted button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
+        <div id="center">
+          <Button id="menuButton" className="massive ui inverted button" value={"Play"} onClick={()=>{window.location="/play"}}/>
+          <Button id="menuButton" className="massive ui inverted button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
+          <Button id="menuButton" className="massive ui inverted button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
         </div>
       </div>
     );

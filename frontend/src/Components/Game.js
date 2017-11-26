@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import QuestionPanel from './QuestionPanel';
-const request = require('request');
 class Game extends Component {
   constructor(props){
     super(props);
@@ -12,7 +11,7 @@ class Game extends Component {
         noq:this.props.match.params.noq,
         questionlist:[],
         score:0,
-        answeredQuestions = 0,
+        answeredQuestions:0,
       }
       this.addScore=this.addScore.bind(this);
     }
