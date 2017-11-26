@@ -9,7 +9,7 @@ class Home extends Component {
         <header>
           <h1>General Quiz Game</h1>
         </header>
-        <div className="buttons">
+        <div className="ui three item menu">
           <Button className="ui button" value={"Play"} onClick={()=>{window.location="/play"}}/>
           <Button className="ui button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
           <Button className="ui button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
