@@ -1,4 +1,4 @@
 // add all models here
 
-// require('./HighScore');
+require('./HighScore');
 require('./Question');
