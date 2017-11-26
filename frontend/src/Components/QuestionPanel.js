@@ -24,6 +24,7 @@ class QuestionPanel extends Component {
         if(this.state.answer===e){
           this.setState({correct:true});
           console.log("Correct");
+          this.props.sendCorrect(5);
         }else{
           this.setState({correct:false});
           console.log("Wrong");

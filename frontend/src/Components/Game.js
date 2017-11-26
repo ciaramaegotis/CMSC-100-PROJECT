@@ -9,10 +9,10 @@ class Game extends Component {
         category2:this.props.match.params.cat2,
         category3:this.props.match.params.cat3,
         noq:this.props.match.params.noq,
-        questionNo: 0,
         questionlist:[],
-        question:{}
+        score:0
       }
+      this.addScore=this.addScore.bind(this);
     }
     componentDidMount() {
 
@@ -23,7 +23,12 @@ class Game extends Component {
     })
     .catch((e) => {console.log(e); });
     }
+  addScore(val){
+    this.setState({score:this.state.score+val},()=>{
+          console.log(this.state.score);
+    });
 
+  }
   render() {
     return (
       <div className="Game">
@@ -31,7 +36,7 @@ class Game extends Component {
             <div>
             {this.state.questionlist.map((choice,i) => {
               return (
-              <QuestionPanel key={i} data={this.state.questionlist[i]}/>
+              <QuestionPanel key={i} data={this.state.questionlist[i]} sendCorrect={this.addScore}/>
               )
             })}
             </div>
