@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
 import './../../semantic/dist/semantic.min.css';
-import './CSS/Home.css';
-
-import $ from 'jquery';
 class Home extends Component {
   render() {
     return (
-      <div className='Home' id = "background">
+      <div className='Home'>
         <header>
           <h1 id = "titleGame">Kakasa ka ba kay Ma'am Monina?</h1>
         </header>

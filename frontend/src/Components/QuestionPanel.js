@@ -10,10 +10,40 @@ class QuestionPanel extends Component {
       difficulty:this.props.data.difficulty,
       category:this.props.data.category,
       answer:this.props.data.answer,
-      choices:this.props.data.choices}
+      choices:this.props.data.choices,
+      givenanswer: "",
+      answered: false,
+      correct: false
+    }
+    this.checker = this.checker.bind(this);
+    this.inputChangeHandler = this.inputChangeHandler.bind(this);
+  }
+  checker(e){
+    this.setState({answered:true},()=>{
+      if(this.state.type==="True or False"||this.state.type==="Multiple Choice"){
+        if(this.state.answer===e){
+          this.setState({correct:true});
+          console.log("Correct");
+          this.props.sendCorrect(5);
+        }else{
+          this.setState({correct:false});
+          console.log("Wrong");
+        }
+      }else{
+        if(this.state.givenanswer.toLowerCase()===this.state.answer.toLowerCase()){
+          this.setState({correct:true});
+          console.log("Correct");
+        }else{
+          this.setState({correct:false});
+          console.log("Wrong");
+        }
+      }
+    });
+  }
+  inputChangeHandler(e){
+    this.setState({givenanswer:e.target.value});
   }
   render() {
-    console.log("from QuestionPanel: " + this.props);
     return (
       <div className="ui large centered card">
         <div className="content">
@@ -23,30 +53,20 @@ class QuestionPanel extends Component {
         </div>
         <div className="extracontent">
         {/*ForTrueOrFalse types*/}
-          {this.state.type==="True or False" &&
+          {((this.state.type==="True or False"||this.state.type==="Multiple Choice")&&this.state.answered === false) &&
             <div className="fluid ui buttons">
               {this.state.choices.map((choice,i) => {
                 return (
-                <Button key={i}className="large ui button" value={choice}/>
-                )
-              })}
-            </div>
-          }
-          {/*For MultipleChoice*/}
-          {this.state.type==="Multiple Choice"&&
-            <div className="fluid ui buttons">
-              {this.state.choices.map((choice,i) => {
-                return (
-                <Button key={i} className="large ui button" value={choice}/>
+                <Button key={i} onClick={()=>{this.checker(choice)}} className="large ui button" value={choice}/>
                 )
               })}
             </div>
           }
           {/*For Text Input types*/}
-          {this.state.type==="Text Answer"&&
-            <div>
-              <input type="text"></input>
-              <Button className="large ui button" value={"Submit"}/>
+          {((this.state.type==="Text Answer"||this.state.type==="Number Answer")&&this.state.answered===false)&&
+            <div className="ui action input">
+              <input value={this.state.givenanswer} onChange={this.inputChangeHandler}type="text" placeholder={this.state.type==="Text Answer"? 'text':'number'}></input>
+              <Button className="large ui button" onClick={this.checker}value={"Submit"}/>
             </div>
           }
         </div>
@@ -54,5 +74,4 @@ class QuestionPanel extends Component {
     );
   }
 }
-QuestionPanel.defaultProps={};
 export default QuestionPanel;
