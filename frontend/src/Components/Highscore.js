@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
+
+
 class Highscore extends Component {
   constructor(props){
     super(props);
     this.state={
-      highscorelist: [{name:"Ian",score:100},{name:"Norv",score:90},{name:"AHH",score:300}]
+      highscorelist: []
     }
     this.sorthighscore = this.sorthighscore.bind(this);
   }
 
   componentDidMount() {
-      this.sorthighscore(this.state.highscorelist);
-      fetch('http://localhost:3001/Highscores/gethighscores')
+      fetch('http://localhost:3001/quizgame/viewHighScore')
       .then((response)=> {return response.json() })
-      .then((result) => { this.setState({highscorelist: result});
-      console.log(result);
-    })
+      .then((result) => {this.setState({highscorelist: result})})
+      .then(() => {this.sorthighscore(this.state.highscorelist);})
+      // .then(() => {console.log(this.state.highscorelist)})
+       
       .catch((e) => {console.log(e); });
   }
+
   sorthighscore(e){
     const temphighscore = e;
     temphighscore.sort(function(a,b){
@@ -26,6 +29,8 @@ class Highscore extends Component {
     this.setState({highscorelist:temphighscore});
   }
   render() {
+
+    console.log(this.state.highscorelist + "\n\n\n\n\n\n\n");
     return (
       <div>
       <HighscoreTable value={this.state.highscorelist}/>
