@@ -4,7 +4,7 @@ import Home from './Components/Home';
 import Play from './Components/Play';
 import Highscore from './Components/Highscore';
 import Edit from './Components/Edit';
-
+import Game from './Components/Game';
 class App extends Component {
   render() {
     return (
@@ -15,6 +15,7 @@ class App extends Component {
         <Route exact={true} path="/play" component={Play} />
         <Route exact={true} path="/highscore" component={Highscore} />
         <Route exact={true} path="/edit" component={Edit} />
+        <Route exact={true} path="/game" component={Game} />
         </div>
       </Router>
       </div>
