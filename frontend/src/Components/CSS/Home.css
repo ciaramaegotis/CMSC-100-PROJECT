@@ -1,0 +1,66 @@
+.Home{
+  min-height: 100%;
+  height: auto;
+  width: 100%;
+  background-color: white;
+  top:0;
+  left:0;
+  position: absolute;
+}
+
+
+/*
+.Home Button{
+  background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    float:left;
+}
+*/
+@import url(https://fonts.googleapis.com/css?family=Walter+Turncoat);
+.Home button{
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+#background{
+  background-image: url("./../../../assets/wallpaper.jpg");
+}
+
+@font-face
+{
+  font-family: Eraserimport;
+  src: url("./../../../assets/eraser/EraserRegular.ttf")format('truetype');
+}
+
+#titleGame{
+  font-family: Eraserimport;
+  text-align: center;
+  color: white;
+  font-size: 5.0em;
+  padding-top: 15%;
+}
+
+#menuButton{
+  font-family: Eraserimport;
+  background-position: center;
+  text-align: center;
+  margin: auto;
+  width: 30%;
+}
+
+#menuButton:hover .image{
+  opacity: 1;
+}
+
+#center{
+  width: 60%;
+  margin: 0 auto;
+}
