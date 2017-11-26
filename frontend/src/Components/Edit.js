@@ -6,7 +6,7 @@ class Edit extends Component {
   render() {
     return (
       <div id="makecenter">
-        EDIT<br/>
+        <label id = "labelDesign"> EDIT </label> <br/>
         <br/>
         <Button className="ui button" value={"Add Question"} onClick={()=>{window.location+="/add-question"}}/><br/>
         <Button className="ui button" value={"Add Category"} onClick={()=>{window.location+="/add-category"}}/><br/>
