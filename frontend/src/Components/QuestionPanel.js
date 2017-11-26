@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Button from './Button';
 import './../../semantic/dist/semantic.min.css';
-import $ from 'jquery';
 class QuestionPanel extends Component {
   constructor(props){
     super(props);
@@ -16,7 +15,6 @@ class QuestionPanel extends Component {
   render() {
     return (
       <div className="ui large centered card">
-
         <div className="content">
           <div className="ui justified container">
             {this.state.question}
@@ -24,7 +22,7 @@ class QuestionPanel extends Component {
         </div>
         <div className="extracontent">
         {/*ForTrueOrFalse types*/}
-          {this.state.type==="TrueOrFalse" &&
+          {this.state.type==="True or False" &&
             <div className="fluid ui buttons">
               {this.state.choices.map((choice,i) => {
                 return (
@@ -34,7 +32,7 @@ class QuestionPanel extends Component {
             </div>
           }
           {/*For MultipleChoice*/}
-          {this.state.type==="MultipleChoice"&&
+          {this.state.type==="Multiple Choice"&&
             <div className="fluid ui buttons">
               {this.state.choices.map((choice,i) => {
                 return (
@@ -44,7 +42,7 @@ class QuestionPanel extends Component {
             </div>
           }
           {/*For Text Input types*/}
-          {this.state.type==="TextInput"&&
+          {this.state.type==="Text Answer"&&
             <div>
               <input type="text"></input>
               <Button className="large ui button" value={"Submit"}/>
@@ -55,5 +53,5 @@ class QuestionPanel extends Component {
     );
   }
 }
-
+QuestionPanel.defaultProps={};
 export default QuestionPanel;

@@ -15,7 +15,7 @@ class App extends Component {
         <Route exact={true} path="/play" component={Play} />
         <Route exact={true} path="/highscore" component={Highscore} />
         <Route exact={true} path="/edit" component={Edit} />
-        <Route exact={true} path="/game" component={Game} />
+        <Route path="/game/:cat1&:cat2&:cat3&:noq" component={Game} />
         </div>
       </Router>
       </div>

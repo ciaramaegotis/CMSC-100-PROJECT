@@ -5,45 +5,46 @@ class Game extends Component {
   constructor(props){
     super(props);
       this.state={
+        category1:this.props.match.params.cat1,
+        category2:this.props.match.params.cat2,
+        category3:this.props.match.params.cat3,
+        noq:this.props.match.params.noq,
         questionNo: 0,
-        questionlist:[
-        {
-          question:"Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vita",
-          type:"TrueOrFalse",
-          difficulty:"easy",
-          category:"Logic",
-          answer:"a",
-          choices:["adsadsad","b","c","d"]},
-          {
-            question:"abcd?",
-            type:"TextInput",
-            difficulty:"easy",
-            category:"Logic",
-            answer:"a",
-            choices:["adsadsad","b","c","d"]}
-        ]
+        questionlist:[],
+        question:{}
       }
       this.nextQuestionHandler =   this.nextQuestionHandler.bind(this);
       this.prevQuestionHandler =   this.prevQuestionHandler.bind(this);
     }
+    componentDidMount() {
+      fetch(`http://localhost:3001/quizgame/getquiz/category1=${this.state.category1}&category2=${this.state.category2}&category3=${this.state.category3}&count=${this.state.noq}`)
+      .then((response)=> {return response.json() })
+      .then((result) => { this.setState({questionlist: result},()=>{this.setState({question: this.state.questionlist[0][0]})}
+    );
+    })
+    .catch((e) => {console.log(e); });
+    }
     nextQuestionHandler(){
       if(this.state.questionNo<this.state.questionlist.length-1){
-          this.setState({questionNo:this.state.questionNo+1});
+          this.setState({questionNo:this.state.questionNo+1},()=>{
+          console.log(this.state.questionNo)});
       }
-      console.log(this.state.questionNo);
     }
     prevQuestionHandler(){
       if(this.state.questionNo>0){
-        this.setState({questionNo:this.state.questionNo-1});
+        this.setState({questionNo:this.state.questionNo-1},()=>{
+        console.log(this.state.questionNo)});
       }
+      console.log(this.state.question);
+
     }
 
   render() {
     return (
       <div className="Game">
-          <QuestionPanel data={this.state.questionlist[this.state.questionNo]}/>
           <Button value="Prev" onClick={this.prevQuestionHandler}/>
           <Button value="Next" onClick={this.nextQuestionHandler}/>
+          <QuestionPanel data={this.state.question}/>
       </div>
     );
   }
