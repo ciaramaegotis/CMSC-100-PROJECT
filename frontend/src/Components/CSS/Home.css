@@ -11,8 +11,9 @@
   color:blue;
   text-align: center;
 }
+/*
 .Home Button{
-  background-color: #4CAF50; 
+  background-color: #4CAF50;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -21,7 +22,7 @@
     font-size: 16px;
     float:left;
 }
-
+*/
 .Home button{
   display: inline-block;
   text-align: center;
