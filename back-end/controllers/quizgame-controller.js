@@ -118,24 +118,40 @@ var randomizeQuestions = (questions,n) =>{
 
   for(let i = 0; i < 3; i ++){
     for(let j = 0; j < questions[i].length; j++){
-      if(questions[i][j].difficulty == "Medium") easyQuestions.push(questions[i][j]);
+      if(questions[i][j].difficulty == "Medium") mediumQuestions.push(questions[i][j]);
     }
   }
   for(let i = 0; i < 3; i ++){
     for(let j = 0; j < questions[i].length; j++){
-      if(questions[i][j].difficulty == "Hard") easyQuestions.push(questions[i][j]);
+      if(questions[i][j].difficulty == "Hard") hardQuestions.push(questions[i][j]);
     }
   }
   // shuffle them
   easyQuestions = shuffleArray(easyQuestions);
   mediumQuestions = shuffleArray(mediumQuestions);
   hardQuestions = shuffleArray(hardQuestions);
+  console.log("easyQuestions: " + easyQuestions.length+ "->"+ easyQuestions + "\n\n");
+  console.log("mediumQuestions: " +  mediumQuestions.length+ "->" + mediumQuestions+ "\n\n");
+  console.log("hardQuestions "+ hardQuestions.length+ "->" + hardQuestions+ "\n\n");
+
+
 
   //getfirst n
-  allQuestions.push(easyQuestions.slice(0, easyCount));
-  allQuestions.push(easyQuestions.slice(0, mediumCount));
-  allQuestions.push(easyQuestions.slice(0, hardCount));
+  easyQuestions = easyQuestions.slice(0, easyCount);
+  mediumQuestions = mediumQuestions.slice(0, mediumCount);
+  hardQuestions=hardQuestions.slice(0, hardCount);
 
+  for(let i = 0; i < easyQuestions.length; i++){
+    allQuestions.push(easyQuestions[i]);
+  }
+
+  for(let i = 0; i < mediumQuestions.length; i++){
+    allQuestions.push(mediumQuestions[i]);
+  }
+
+  for(let i = 0; i < hardQuestions.length; i++){
+    allQuestions.push(hardQuestions[i]);
+  }
   // return the final Array
   return allQuestions;
   //source:https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

@@ -23,7 +23,8 @@ class Game extends Component {
 
       fetch(`http://localhost:3001/quizgame/getquiz/category1=${this.state.category1}&category2=${this.state.category2}&category3=${this.state.category3}&count=${this.state.noq}`)
       .then((response)=> {return response.json() })
-      .then((result) => { this.setState((prevState, props) => ({ questionlist: result }));
+      .then((result) => { this.setState({questionlist: result},()=>{this.setState({start:true})}
+      );
     })
     .catch((e) => {console.log(e); });
     console.log("After Didmount");
@@ -50,12 +51,11 @@ class Game extends Component {
       <div className="Game">
           <Button value="Prev" onClick={this.prevQuestionHandler}/>
           <Button value="Next" onClick={this.nextQuestionHandler}/>
-          <Button value="Start" onClick={this.start}/>
           {this.state.start===true&&
             <div>
-              <QuestionPanel data={this.state.questionlist[0][0]}/>
-              <QuestionPanel data={this.state.questionlist[1][0]}/>
-              <QuestionPanel data={this.state.questionlist[2][0]}/>          }
+              <QuestionPanel data={this.state.questionlist[0]}/>
+              <QuestionPanel data={this.state.questionlist[1]}/>
+              <QuestionPanel data={this.state.questionlist[2]}/>          }
             </div>
           }
     </div>
