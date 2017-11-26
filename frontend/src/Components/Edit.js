@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import AddQuestion from './AddQuestion';
 import Button from './Button';
+import './../App.css';
 class Edit extends Component {
   render() {
     return (
-      <div>
+      <div id="makecenter">
         EDIT<br/>
         <br/>
         <Button className="ui button" value={"Add Question"} onClick={()=>{window.location+="/add-question"}}/><br/>

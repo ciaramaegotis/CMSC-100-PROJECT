@@ -18,6 +18,7 @@ class AddQuestionDropdown extends Component {
     this.categoryHandler = this.categoryHandler.bind(this);
     this.answerHandler = this.answerHandler.bind(this);
     this.choicesHandler = this.choicesHandler.bind(this);
+    this.clickHandler = this.clickHandler.bind(this);
   }
 
   questionHandler(e){
@@ -37,6 +38,9 @@ class AddQuestionDropdown extends Component {
   }
   choicesHandler(e){
     this.setState({choices:e.target.value});
+  }
+  clickHandler(){
+    /*Submit*/
   }
 
   render() {
@@ -79,7 +83,7 @@ class AddQuestionDropdown extends Component {
               <div class="ui big input">
               <input type="text" placeholder="Choices" onChange={this.choicesHandler}/>
               </div></div>
-              <Button className="ui button" value={"Submit"}/>
+              <Button className="ui button" value={"Submit"} onClick={this.clickHandler}/>
             </div>
           </div>
         </div>
