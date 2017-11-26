@@ -6,7 +6,7 @@ class AddQuestion extends Component {
 		return(
 			<div>
 			{/*map this*/}
-				<div id="buttons" class="ui left labeled button" tabindex="0">
+				<div id="buttons" className ="ui left labeled button" tabindex="0">
   				<a class="ui basic right pointing label">
     			"Category"
     			</a>

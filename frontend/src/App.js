@@ -12,7 +12,7 @@ import Game from './Components/Game';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id = "background">
       <Router>
         <div>
         <Route exact={true} path="/" component={Home} />

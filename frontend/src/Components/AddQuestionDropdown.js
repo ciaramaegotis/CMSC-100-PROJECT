@@ -46,41 +46,41 @@ class AddQuestionDropdown extends Component {
   render() {
     return (
       <div>
-        <div class="ui compact menu">
-          <div class="ui simple dropdown item">
+        <div className = "ui compact menu">
+          <div className = "ui simple dropdown item">
           +
-          <i class="dropdown icon"></i>
-            <div class="menu">
-              <div class="item">
-              <div class="ui big input">
+          <i className = "dropdown icon"></i>
+            <div className = "menu">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Question" onChange={this.questionHandler}/>
               </div></div>
 
-              <div class="item">
-              <div class="ui big input">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Type" onChange={this.typeHandler}/>
               </div></div>
               
 
-              <div class="item">
-              <div class="ui big input">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Difficulty" onChange={this.difficultyHandler}/>
               </div></div>
               
 
-              <div class="item">
-              <div class="ui big input">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Category" onChange={this.categoryHandler}/>
               </div></div>
 
 
-              <div class="item">
-              <div class="ui big input">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Correct Answer" onChange={this.answerHandler}/>
               </div></div>
 
-              <div class="item">
-              <div class="ui big input">
+              <div className = "item">
+              <div className = "ui big input">
               <input type="text" placeholder="Choices" onChange={this.choicesHandler}/>
               </div></div>
               <Button className="ui button" value={"Submit"} onClick={this.clickHandler}/>

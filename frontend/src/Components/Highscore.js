@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import './CSS/Home.css';
+import Button from './Button.js';
+import './../../semantic/dist/semantic.min.css';
 
 class Highscore extends Component {
   constructor(props){
@@ -29,12 +31,9 @@ class Highscore extends Component {
     this.setState({highscorelist:temphighscore});
   }
   render() {
-
-    console.log(this.state.highscorelist + "\n\n\n\n\n\n\n");
     return (
-      <div>
+      <div id = "table">
       <HighscoreTable value={this.state.highscorelist}/>
-      <button onClick={this.sorthighscore}>Sort</button>
       </div>
     );
   }
@@ -46,7 +45,7 @@ class HighscoreTable extends Component{
 
   render(){
     return(
-      <table>
+      <table id = "table">
       <tbody>
         <tr>
           <th>Name</th>
@@ -56,14 +55,21 @@ class HighscoreTable extends Component{
           this.props.value.map(
                 (item,index)=>{
                   return(
-                    <tr key={index}>
+                    <tr key={index} id = "trpadding">
                         <th>{item.name}</th>
                         <th>{item.score}</th>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
+                        <br/>
                     </tr>
                   )
                 }
               )
         }
+        <button id = "hsButton" className = "massive ui inverted button" onClick = {()=>{window.location = "/"}}> back to Menu </button>
       </tbody>
       </table>
     )
