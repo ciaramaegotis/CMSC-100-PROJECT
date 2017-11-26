@@ -1,8 +1,29 @@
 var sleep = require('system-sleep');
-// const HighScore = require('mongoose').model('HighScore');
+const HighScore = require('mongoose').model('HighScore');
 const Question = require('mongoose').model('Question');
 // const Movie = require('mongoose').model('Movie');
+exports.getCategories = (req, res) =>{
+  console.log("wanna get categories")
+  // Question.find().distinct('category', (err, categories) =>{
+  //   if(err){
+  //     console.log(err);
+  //     res.send({});
+  //   }else{
+  //     console.log("will return " + categories);
+  //     res.send(categories);
+  //   }
+  // });
+  Question.find({}, (err, questions) => {
+     if (err) {
+       console.log(err);
+       res.send({});
+     } else {
+       console.log(questions);
+       res.send(questions);
+     }
+   });
 
+}
 
 
 
@@ -16,6 +37,20 @@ exports.findAll = (req, res) => {
       res.send(questions);
     }
   });
+}
+
+exports.submitScore = (req, res) => {
+  console.log("post to submitScore");
+  const newRecord = new HighScore(req.body);
+  newRecord.save( (err, record) =>{
+    if (err){
+      console.log(err);
+      res.send({});
+    }else{
+      console.log(newRecord);
+      res.send("score submmitted");
+    }}
+  );
 }
 //
 // exports.findById = (req, res) => {

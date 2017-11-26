@@ -74,4 +74,6 @@ class QuestionPanel extends Component {
     );
   }
 }
+
+
 export default QuestionPanel;

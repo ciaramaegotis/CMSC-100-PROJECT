@@ -27,6 +27,7 @@ class App extends Component {
         <Route exact={true} path="/edit/edit-category" component={Home}/>
         <Route exact={true} path="/edit/delete-question" component={Home}/>
         <Route exact={true} path="/edit/delete-category" component={Home}/>
+        <Route exact={true} path="/submitScore" component={Home}/>
         </div>
       </Router>
       </div>
