@@ -6,7 +6,13 @@ class QuestionPanel extends Component {
   constructor(props){
     super(props);
     this.state={
-      questiondata: {question:"Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vita",type:"Math",difficulty:"easy",category:"Logic",answer:"a",choices:["adsadsad","b","c","d"]}
+      questiondata: {
+      question:"Aenean massa strong. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vita",
+      type:"TrueOrFalse",
+      difficulty:"easy",
+      category:"Logic",
+      answer:"a",
+      choices:["adsadsad","b","c","d"]}
     }
   }
 
@@ -19,12 +25,33 @@ class QuestionPanel extends Component {
           </div>
         </div>
         <div className="extracontent">
-          <div className="fluid ui buttons">
-            <Button className="large ui button" value={this.state.questiondata.choices[0]}/>
-            <Button className="large ui button" value={this.state.questiondata.choices[1]}/>
-            <Button className="large ui button" value={this.state.questiondata.choices[2]}/>
-            <Button className="large ui button" value={this.state.questiondata.choices[3]}/>
-          </div>
+        {/*ForTrueOrFalse types*/}
+          {this.state.questiondata.type==="TrueOrFalse" &&
+            <div className="fluid ui buttons">
+              {this.state.questiondata.choices.map((choice,i) => {
+                return (
+                <Button className="large ui button" value={choice}/>
+                )
+              })}
+            </div>
+          }
+          {/*For MultipleChoice*/}
+          {this.state.questiondata.type==="MultipleChoice"&&
+            <div className="fluid ui buttons">
+              {this.state.questiondata.choices.map((choice,i) => {
+                return (
+                <Button className="large ui button" value={choice}/>
+                )
+              })}
+            </div>
+          }
+          {/*For Text Input types*/}
+          {this.state.questiondata.type==="TextInput"&&
+            <div>
+              <input type="text"></input>
+              <Button className="large ui button" value={"Submit"}/>
+            </div>
+          }
         </div>
       </div>
     );
