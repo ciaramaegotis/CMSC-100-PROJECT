@@ -29,5 +29,6 @@ const QuizGameController = require('../controllers/quizgame-controller');
 // router.post('/delete', MovieController.delete);
 router.get('/getquiz/category1=:cat1&category2=:cat2&category3=:cat3&count=:n', QuizGameController.getquiz);
 router.get('/findAll', QuizGameController.findAll);
+router.get('./getallcategories', QuizGameController.getCategories);
 router.post('./submitScore', QuizGameController.submitScore);
 module.exports = router;

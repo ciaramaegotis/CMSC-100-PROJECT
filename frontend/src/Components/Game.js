@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuestionPanel from './QuestionPanel';
+const request = require('request');
 class Game extends Component {
   constructor(props){
     super(props);
@@ -10,7 +11,8 @@ class Game extends Component {
         category3:this.props.match.params.cat3,
         noq:this.props.match.params.noq,
         questionlist:[],
-        score:0
+        score:0,
+        answeredQuestions = 0,
       }
       this.addScore=this.addScore.bind(this);
     }
@@ -23,13 +25,30 @@ class Game extends Component {
     })
     .catch((e) => {console.log(e); });
     }
+//   submitScore(){
+//     if(this.state.answeredQuestions === this.questionlist.length){
+//       // if answeredQuestions == Number of questions
+//       request.post(
+//   'http://localhost:3001/quizgame/submitScore',
+//   {form: {title: this.state.title, director: this.state.director, year: parseInt(this.state.year), actor: this.state.actor, franchise: this.state.franchise}},
+//   () => {
+//     // empty the fields
+//     this.setState({title: '', year: '', director: '', actor: '', franchise: ''});
+//   }
+// );
+//
+//     }
+//   }
+
   addScore(val){
     this.setState({score:this.state.score+val},()=>{
           console.log(this.state.score);
     });
 
+
   }
   render() {
+    console.log("updated");
     return (
       <div className="Game">
           {this.state.start===true&&
