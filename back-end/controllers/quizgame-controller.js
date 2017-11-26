@@ -61,13 +61,14 @@ exports.getquiz = (req, res) => {
   // //findAll movies with categories
   var fetchedQuestions2 = getquestions(categories, n);
   sleep(1000);
+  // var randomizedQuestions = fetchedQuestions2;
   var randomizedQuestions = randomizeQuestions(fetchedQuestions2, n);
-  sleep(1000);
+  // sleep(1000);
 
   // console.log(fetchedQuestions2 + "huhuhhu");
   // console.log("this are the generated questions " + getquestions(categories, n) + " yaaan :) oh no");
-  res.send(randomizedQuestions + "sent");
-  console.log(fetchedQuestions2 + "meiiiiin");
+  res.send(randomizedQuestions);
+  // console.log(fetchedQuestions2 + "meiiiiin");
 }
 
 var getquestions = (categories,n) =>{
@@ -85,7 +86,7 @@ var getquestions = (categories,n) =>{
           return fetchedQuestions;
         }else{
           fetchedQuestions[i] = questions;
-          console.log(fetchedQuestions[i]);
+          // console.log(fetchedQuestions[i]);
           // console.log(fetchedQuestions[i]);
         }
       }
@@ -99,31 +100,44 @@ var getquestions = (categories,n) =>{
 var randomizeQuestions = (questions,n) =>{
   // get n/3 hard random questions
   // precondition: questions[[], [], []]
-  var easyCount = n/3;
-  var mediumCount = n/3;
+  var easyCount = Math.floor(n/3);
+  var mediumCount = Math.floor(n/3);
   var hardCount = n-(easyCount+mediumCount);
+  console.log("easy: " +  easyCount +  ",med:"+  mediumCount +  "hard: " + hardCount);
   var allQuestions = new Array();
   var easyQuestions = new Array();
   var mediumQuestions = new Array();
   var hardQuestions = new Array();
   // var toReturn = new Array();
-
-  for(let i =0; i < easyQuestions; i++){
-    for(let j = 0; j < 3; j++){
-     if(questions[j][])
+  // get all easyQuestions
+  for(let i = 0; i < 3; i ++){
+    for(let j = 0; j < questions[i].length; j++){
+      if(questions[i][j].difficulty == "Easy") easyQuestions.push(questions[i][j]);
     }
   }
 
-  function shuffleArray(array) {
-      for (var i = array.length - 1; i > 0; i--) {
-          var j = Math.floor(Math.random() * (i + 1));
-          var temp = array[i];
-          array[i] = array[j];
-          array[j] = temp;
-      }
+  for(let i = 0; i < 3; i ++){
+    for(let j = 0; j < questions[i].length; j++){
+      if(questions[i][j].difficulty == "Medium") easyQuestions.push(questions[i][j]);
+    }
   }
+  for(let i = 0; i < 3; i ++){
+    for(let j = 0; j < questions[i].length; j++){
+      if(questions[i][j].difficulty == "Hard") easyQuestions.push(questions[i][j]);
+    }
+  }
+  // shuffle them
+  easyQuestions = shuffleArray(easyQuestions);
+  mediumQuestions = shuffleArray(mediumQuestions);
+  hardQuestions = shuffleArray(hardQuestions);
 
+  //getfirst n
+  allQuestions.push(easyQuestions.slice(0, easyCount));
+  allQuestions.push(easyQuestions.slice(0, mediumCount));
+  allQuestions.push(easyQuestions.slice(0, hardCount));
 
+  // return the final Array
+  return allQuestions;
   //source:https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
     // let questionsToSubmit = new Array();
     // const difficulty = ['Easy', 'Medium', 'Hard'];
@@ -144,3 +158,13 @@ var randomizeQuestions = (questions,n) =>{
     // }
     // return questionsToSubmit;
 }
+
+  function shuffleArray(array) {
+      for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+      }
+      return array;
+  }
