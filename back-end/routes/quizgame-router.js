@@ -30,4 +30,5 @@ const QuizGameController = require('../controllers/quizgame-controller');
 router.get('/getquiz/category1=:cat1&category2=:cat2&category3=:cat3&count=:n', QuizGameController.getquiz);
 router.get('/findAll', QuizGameController.findAll);
 router.get('/viewHighScore', QuizGameController.viewHighScore);
+router.get('/getCategories', QuizGameController.getCategories);
 module.exports = router;

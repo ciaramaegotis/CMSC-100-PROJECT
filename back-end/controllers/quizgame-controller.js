@@ -4,6 +4,17 @@ const Question = require('mongoose').model('Question');
 // const Movie = require('mongoose').model('Movie');
 const HighScore = require('mongoose').model('HighScore');
 
+exports.getCategories = (req, res) => {
+  Question.distinct("category", (err, categories) =>{
+    if (err){
+      console.log(err);
+      res.send({});
+    }else{
+      console.log(categories);
+      res.send(categories);
+    }
+  });
+}
 exports.viewHighScore = (req, res) => {
   HighScore.find({}, (err, scores) => {
     if (err){
