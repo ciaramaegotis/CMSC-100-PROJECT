@@ -12,18 +12,35 @@ class QuestionPanel extends Component {
       answer:this.props.data.answer,
       choices:this.props.data.choices,
       givenanswer: "",
-      answered: false
+      answered: false,
+      correct: false
     }
     this.checker = this.checker.bind(this);
+    this.inputChangeHandler = this.inputChangeHandler.bind(this);
   }
   checker(e){
     this.setState({answered:true},()=>{
-      if(this.state.answer===e){
-        console.log("Correct");
+      if(this.state.type==="True or False"||this.state.type==="Multiple Choice"){
+        if(this.state.answer===e){
+          this.setState({correct:true});
+          console.log("Correct");
+        }else{
+          this.setState({correct:false});
+          console.log("Wrong");
+        }
       }else{
-        console.log("Wrong");
+        if(this.state.givenanswer.toLowerCase()===this.state.answer.toLowerCase()){
+          this.setState({correct:true});
+          console.log("Correct");
+        }else{
+          this.setState({correct:false});
+          console.log("Wrong");
+        }
       }
     });
+  }
+  inputChangeHandler(e){
+    this.setState({givenanswer:e.target.value});
   }
   render() {
     return (
@@ -45,10 +62,10 @@ class QuestionPanel extends Component {
             </div>
           }
           {/*For Text Input types*/}
-          {(this.state.type==="Text Answer"||this.state.type==="Number Answer")&&
-            <div>
-              <input type="text" placeholder={this.state.type==="Text Answer"? 'text':'number'}></input>
-              <Button className="large ui button" value={"Submit"}/>
+          {((this.state.type==="Text Answer"||this.state.type==="Number Answer")&&this.state.answered===false)&&
+            <div className="ui action input">
+              <input value={this.state.givenanswer} onChange={this.inputChangeHandler}type="text" placeholder={this.state.type==="Text Answer"? 'text':'number'}></input>
+              <Button className="large ui button" onClick={this.checker}value={"Submit"}/>
             </div>
           }
         </div>
