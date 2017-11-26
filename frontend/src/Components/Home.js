@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import Button from './Button.js';
-
+import './../../semantic/dist/semantic.min.css';
+import $ from 'jquery';
 class Home extends Component {
   render() {
     return (
-      <div class='Home'>
+      <div className='Home'>
         <header>
           <h1>General Quiz Game</h1>
         </header>
-        <div class="buttons">
-          <Button value={"Play"} onClick={()=>{window.location="/play"}}/>
-          <Button value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
-          <Button value={"Edit"} onClick={()=>{window.location="/edit"}}/>
+        <div className="ui three item menu">
+          <Button className="ui button" value={"Play"} onClick={()=>{window.location="/play"}}/>
+          <Button className="ui button" value={"High Score"} onClick={()=>{window.location="/highscore"}}/>
+          <Button className="ui button" value={"Edit"} onClick={()=>{window.location="/edit"}}/>
         </div>
       </div>
     );

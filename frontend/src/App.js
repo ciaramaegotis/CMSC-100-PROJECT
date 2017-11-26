@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './Components/Home';
 import Play from './Components/Play';
+import AddQuestion from './Components/AddQuestion';
 import Highscore from './Components/Highscore';
 import Edit from './Components/Edit';
 import './Components/CSS/Home.css';
@@ -15,6 +16,7 @@ class App extends Component {
         <Route exact={true} path="/play" component={Play} />
         <Route exact={true} path="/highscore" component={Highscore} />
         <Route exact={true} path="/edit" component={Edit} />
+        <Route exact={true} path="/edit/add-question" component={AddQuestion} />
         </div>
       </Router>
       </div>
