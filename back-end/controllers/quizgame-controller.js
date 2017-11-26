@@ -135,11 +135,23 @@ var randomizeQuestions = (questions,n) =>{
   console.log("hardQuestions "+ hardQuestions.length+ "->" + hardQuestions+ "\n\n");
 
 
-  //getfirst n
-  allQuestions.push(easyQuestions.slice(0, easyCount));
-  allQuestions.push(mediumQuestions.slice(0, mediumCount));
-  allQuestions.push(hardQuestions.slice(0, hardCount));
 
+  //getfirst n
+  easyQuestions = easyQuestions.slice(0, easyCount);
+  mediumQuestions = mediumQuestions.slice(0, mediumCount);
+  hardQuestions=hardQuestions.slice(0, hardCount);
+
+  for(let i = 0; i < easyQuestions.length; i++){
+    allQuestions.push(easyQuestions[i]);
+  }
+
+  for(let i = 0; i < mediumQuestions.length; i++){
+    allQuestions.push(mediumQuestions[i]);
+  }
+
+  for(let i = 0; i < hardQuestions.length; i++){
+    allQuestions.push(hardQuestions[i]);
+  }
   // return the final Array
   return allQuestions;
   //source:https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array

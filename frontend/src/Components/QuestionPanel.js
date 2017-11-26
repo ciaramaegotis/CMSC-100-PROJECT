@@ -13,6 +13,7 @@ class QuestionPanel extends Component {
       choices:this.props.data.choices}
   }
   render() {
+    console.log("from QuestionPanel: " + this.props);
     return (
       <div className="ui large centered card">
         <div className="content">

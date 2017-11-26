@@ -53,6 +53,7 @@ class Game extends Component {
           <Button value="Prev" onClick={this.prevQuestionHandler}/>
           <Button value="Next" onClick={this.nextQuestionHandler}/>
           <QuestionPanel data={this.state.question}/>
+          // {this.state.question}
       </div>
     );
   }
