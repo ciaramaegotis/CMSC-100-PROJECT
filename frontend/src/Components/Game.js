@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import QuestionPanel from './QuestionPanel';
-import Button from './Button';
-var sleep = require('sleep');
 class Game extends Component {
   constructor(props){
     super(props);
@@ -15,9 +13,6 @@ class Game extends Component {
         questionlist:[],
         question:{}
       }
-      this.nextQuestionHandler =   this.nextQuestionHandler.bind(this);
-      this.prevQuestionHandler =   this.prevQuestionHandler.bind(this);
-      this.start = this.start.bind(this);
     }
     componentDidMount() {
 
@@ -27,35 +22,18 @@ class Game extends Component {
       );
     })
     .catch((e) => {console.log(e); });
-    console.log("After Didmount");
-    console.log(this.state.questionlist);
     }
 
-    nextQuestionHandler(){
-      if(this.state.questionNo<this.state.questionlist.length-1){
-          this.setState({questionNo:this.state.questionNo+1});
-      }
-    }
-    prevQuestionHandler(){
-      if(this.state.questionNo>0){
-        this.setState({questionNo:this.state.questionNo-1});
-      }
-      console.log(this.state.questionlist);
-
-    }
-    start(){
-      this.setState({start:true});
-    }
   render() {
     return (
       <div className="Game">
-          <Button value="Prev" onClick={this.prevQuestionHandler}/>
-          <Button value="Next" onClick={this.nextQuestionHandler}/>
           {this.state.start===true&&
             <div>
-              <QuestionPanel data={this.state.questionlist[0]}/>
-              <QuestionPanel data={this.state.questionlist[1]}/>
-              <QuestionPanel data={this.state.questionlist[2]}/>          }
+            {this.state.questionlist.map((choice,i) => {
+              return (
+              <QuestionPanel key={i} data={this.state.questionlist[i]}/>
+              )
+            })}
             </div>
           }
     </div>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from './Button';
 import AddQuestionDropdown from './AddQuestionDropdown';
 class AddQuestion extends Component {
 	render(){
@@ -11,7 +10,7 @@ class AddQuestion extends Component {
     			"Category"
     			</a>
         		<AddQuestionDropdown className="ui button" value={"+"}/>
-        	</div> 
+        	</div>
 			</div>
 		);
 	}
