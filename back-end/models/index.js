@@ -2,3 +2,4 @@
 
 // require('./HighScore');
 require('./Question');
+require('./HighScore');
